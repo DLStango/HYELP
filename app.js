@@ -203,7 +203,9 @@ app.get('/NearestFacilities', function(req, res, next) {
   res.render('NearestFacilities',{title:"NearestFacilities"});
 });
 
-
+app.get('/C&S', function(req, res, next) {
+  res.render('C&S',{title:"C&S"});
+});
 // myform demo ...
 
 app.get('/myform', function(req, res, next) {
