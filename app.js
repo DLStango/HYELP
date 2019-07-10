@@ -187,8 +187,8 @@ app.get('/griddemo', function(req, res, next) {
   res.render('griddemo',{title:"Grid Demo"});
 });
 
-app.get('/knowyourrights', function(req, res, next) {
-  res.render('knowyourrights',{title:"Know Your Rights"});
+app.get('/passBill', function(req, res, next) {
+  res.render('passBill',{title:"Help pass legislation"});
 });
 
 app.get('/Weather', function(req, res, next) {
