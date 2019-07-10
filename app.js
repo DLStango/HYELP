@@ -187,6 +187,9 @@ app.get('/griddemo', function(req, res, next) {
   res.render('griddemo',{title:"Grid Demo"});
 });
 
+app.get('/knowyourrights', function(req, res, next) {
+  res.render('knowyourrights',{title:"Grid Demo"});
+});
 
 
 app.get('/bmidemo', (req, res) => {
