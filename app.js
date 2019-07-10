@@ -187,6 +187,10 @@ app.get('/griddemo', function(req, res, next) {
   res.render('griddemo',{title:"Grid Demo"});
 });
 
+app.get('/shareStory', function(req, res, next) {
+  res.render('shareStory',{title:"Share your story"});
+});
+
 app.get('/passBill', function(req, res, next) {
   res.render('passBill',{title:"Help pass legislation"});
 });
@@ -202,7 +206,6 @@ app.get('/bmidemo', (req, res) => {
 app.get('/NearestFacilities', function(req, res, next) {
   res.render('NearestFacilities',{title:"NearestFacilities"});
 });
-
 
 // myform demo ...
 
