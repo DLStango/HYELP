@@ -178,12 +178,6 @@ app.get('/showPost/:id',
 app.post('/saveForumComment',forumPostController.saveForumComment)
 
 
-
-
-app.get('/griddemo', function(req, res, next) {
-  res.render('griddemo',{title:"Grid Demo"});
-});
-
 app.get('/shareStory', function(req, res, next) {
   res.render('shareStory',{title:"Share your story"});
 });
@@ -192,13 +186,14 @@ app.get('/seeStories', function(req, res, next) {
   res.render('seeStories',{title:"See people's stories"});
 });
 
-app.get('/passBill', function(req, res, next) {
-  res.render('passBill',{title:"Help pass legislation"});
-});
-
 app.get('/Weather', function(req, res, next) {
   res.render('Weather',{title:"Boston Weather"});
 });
+
+app.get('/rStanghellini', function(req, res, next) {
+  res.render('rStanghellini',{title:"Boston Weather"});
+});
+
 
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
@@ -215,6 +210,7 @@ app.get('/Donates', function(req, res, next) {
 app.get('/VWork', function(req, res, next) {
   res.render('VWork',{title:"HYELP VWork"});
 });
+
 // myform demo ...
 
 app.get('/myform', function(req, res, next) {
