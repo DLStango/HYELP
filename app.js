@@ -215,6 +215,9 @@ app.get('/Donates', function(req, res, next) {
   res.render('Donates',{title:"Donations"});
 });
 
+app.get('/VWork', function(req, res, next) {
+  res.render('VWork',{title:"Volunteer Work"});
+});
 // myform demo ...
 
 app.get('/myform', function(req, res, next) {
