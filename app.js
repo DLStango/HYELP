@@ -191,6 +191,10 @@ app.get('/shareStory', function(req, res, next) {
   res.render('shareStory',{title:"Share your story"});
 });
 
+app.get('/seeStories', function(req, res, next) {
+  res.render('seeStories',{title:"See people's stories"});
+});
+
 app.get('/passBill', function(req, res, next) {
   res.render('passBill',{title:"Help pass legislation"});
 });
