@@ -191,8 +191,8 @@ app.get('/knowyourrights', function(req, res, next) {
   res.render('knowyourrights',{title:"Know Your Rights"});
 });
 
-app.get('/weather', function(req, res, next) {
-  res.render('weather',{title:"Boston Weather"});
+app.get('/Weather', function(req, res, next) {
+  res.render('Weather',{title:"Boston Weather"});
 });
 
 app.get('/bmidemo', (req, res) => {
