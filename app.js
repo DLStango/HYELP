@@ -207,7 +207,6 @@ app.get('/NearestFacilities', function(req, res, next) {
   res.render('NearestFacilities',{title:"NearestFacilities"});
 });
 
-
 app.get('/Donates', function(req, res, next) {
   res.render('Donates',{title:"Donations"});
 });
