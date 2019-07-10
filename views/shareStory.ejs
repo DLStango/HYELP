@@ -5,4 +5,14 @@
         <p>Tell us and the community what you've experienced</p>
     </div>
 
-    <%- include('bootfooter') -%>
+    <form method="post" action="/processform">
+      Comments:
+      <br>
+      <br>
+      <textarea id="theComments" name="theComments" rows="10" cols="80"></textarea>
+
+      <br>
+
+      <input type="submit">
+    </form>
+<%- include('bootfooter') -%>
