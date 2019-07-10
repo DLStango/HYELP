@@ -4,13 +4,11 @@
         <h1>Trish Nguyen's HYELP Profile</h1>
         <img src="<%= user.profilePicURL%>" width="200">
         <hr>
+
         <p> Welcome <%= user.googlename %>
-            with email <%= user.googleemail %>
-            You are logged in to YellowCartwheel.
+            You are logged in to HYELP.
         </p>
-        <p> <%= user.zipcode %> <%= user.city %> <%= user.state %>
-        <p> Last updated on <%= user.lastUpdate %> </p>
-<a href="/editProfile">edit profile</a>
+
     </div>
 
 <%- include('bootfooter') -%>

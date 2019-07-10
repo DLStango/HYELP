@@ -165,6 +165,12 @@ app.get('/', function(req, res, next) {
   res.render('index',{title:"HYELP Mainpage"});
 });
 
+
+app.get('/VWork', function(req, res, next) {
+  res.render('VWork',{title:"HYELP VWork"});
+});
+
+
 app.get('/quiz2',quiz2Controller.getAllMovieRatings)
 
 
