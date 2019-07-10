@@ -188,9 +188,12 @@ app.get('/griddemo', function(req, res, next) {
 });
 
 app.get('/knowyourrights', function(req, res, next) {
-  res.render('knowyourrights',{title:"Grid Demo"});
+  res.render('knowyourrights',{title:"Know Your Rights"});
 });
 
+app.get('/Weather', function(req, res, next) {
+  res.render('Weather',{title:"Boston Weather"});
+});
 
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
