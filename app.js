@@ -160,18 +160,9 @@ app.use(function(req,res,next){
   next()
 });
 
-
 app.get('/', function(req, res, next) {
   res.render('index',{title:"HYELP Mainpage"});
 });
-
-
-app.get('/VWork', function(req, res, next) {
-  res.render('VWork',{title:"HYELP VWork"});
-});
-
-
-app.get('/quiz2',quiz2Controller.getAllMovieRatings)
 
 
 app.get('/forum',forumPostController.getAllForumPosts)
@@ -222,7 +213,7 @@ app.get('/Donates', function(req, res, next) {
 });
 
 app.get('/VWork', function(req, res, next) {
-  res.render('VWork',{title:"Volunteer Work"});
+  res.render('VWork',{title:"VWork"});
 });
 // myform demo ...
 
