@@ -210,6 +210,9 @@ app.get('/cLai', function(req, res, next) {
   res.render('cLai',{title:"Crystal Lai"});
 });
 
+app.get('/nEphraim', function(req, res, next) {
+  res.render('nEphraim',{title:"Naomi Ephraim"});
+});
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
 });
