@@ -182,6 +182,10 @@ app.get('/shareStory', function(req, res, next) {
   res.render('shareStory',{title:"Share your story"});
 });
 
+app.get('/sSundayTrombone', function(req, res, next) {
+  res.render('sSundayTrombone',{title:"Samantha Sunday Trombone"});
+});
+
 app.get('/seeStories', function(req, res, next) {
   res.render('seeStories',{title:"See people's stories"});
 });
