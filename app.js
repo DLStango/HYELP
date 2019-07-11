@@ -226,6 +226,9 @@ app.get('/Donates', function(req, res, next) {
 app.get('/VWork', function(req, res, next) {
   res.render('VWork',{title:"HYELP VWork"});
 });
+app.get('/passBill', function(req, res, next) {
+  res.render('passBill',{title:"Help pass legislation"});
+});
 
 // myform demo ...
 
