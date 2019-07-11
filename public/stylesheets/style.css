@@ -1,12 +1,16 @@
 body {
   padding: 50px;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Arial", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
-#Rinacss {
+.Rinacss {
   font: 18px "Times New Roman";
+}
+h1 {
+font: 48px "Times New Roman";
+
 }
