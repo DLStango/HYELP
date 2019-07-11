@@ -204,7 +204,7 @@ app.get('/NearestFacilities', function(req, res, next) {
 });
 
 app.get('/Donates', function(req, res, next) {
-  res.render('Donates',{title:"Donations"});
+  res.render('Donates',{title:"Donates"});
 });
 
 app.get('/VWork', function(req, res, next) {
