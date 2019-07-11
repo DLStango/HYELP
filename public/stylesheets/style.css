@@ -25,6 +25,8 @@ text-align: center
 
 }
 
+
+
 .orderedlist {
 
  list-style-type: square
@@ -34,8 +36,16 @@ text-align: center
 .smallbodyfont{
   font:12px "AppleGothic";
 }
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+#navbarDropdown{
+  position: relative;
+  left: 600px;
+}
+
+.navbar-brand{
+  /*float: right;*/
+  /*padding: 0px 100px 10px 200px;*/
+  position: relative;
+  left: 400px;
+
 }
