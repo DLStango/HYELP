@@ -182,6 +182,18 @@ app.get('/shareStory', function(req, res, next) {
   res.render('shareStory',{title:"Share your story"});
 });
 
+app.get('/sSundayTrombone', function(req, res, next) {
+  res.render('sSundayTrombone',{title:"Samantha Sunday Trombone"});
+});
+
+app.get('/eHelms', function(req, res, next) {
+  res.render('eHelms',{title:"Evelyn Helms"});
+});
+
+app.get('/tNguyen', function(req, res, next) {
+  res.render('tNguyen',{title:"Trish Nguyen"});
+});
+
 app.get('/seeStories', function(req, res, next) {
   res.render('seeStories',{title:"See people's stories"});
 });
@@ -194,7 +206,13 @@ app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
 
+app.get('/cLai', function(req, res, next) {
+  res.render('cLai',{title:"Crystal Lai"});
+});
 
+app.get('/nEphraim', function(req, res, next) {
+  res.render('nEphraim',{title:"Naomi Ephraim"});
+});
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
 });
