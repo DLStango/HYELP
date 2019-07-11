@@ -194,6 +194,9 @@ app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
 
+app.get('/cLai', function(req, res, next) {
+  res.render('cLai',{title:"Crystal Lai"});
+});
 
 app.get('/bmidemo', (req, res) => {
   res.render('bmidemo',{title:"BMI Demo"});
