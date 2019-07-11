@@ -7,11 +7,11 @@ a {
   color: #00B7FF;
 }
 
-.Rinacss {
-  font: 18px "Times New Roman";
+.bodyfont {
+  font: 18px "AppleGothic";
 }
 h1 {
-font: 48px "Times New Roman";
+font: 48px "AppleGothic";
 text-align: center
 }
 
