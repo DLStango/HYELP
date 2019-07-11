@@ -12,5 +12,16 @@ a {
 }
 h1 {
 font: 48px "Times New Roman";
+text-align: center
+}
+
+.centerShareStory {
+text-align: center
+
+}
+
+.orderedlist {
+
+ list-style-type: square
 
 }
