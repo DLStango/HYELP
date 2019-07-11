@@ -4,18 +4,33 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #7bb061;
 }
 
-.Rinacss {
-  font: 18px "Times New Roman";
+a:hover{
+  color: #5d8549
+}
+
+.bodyfont {
+  font: 18px "AppleGothic";
+
 }
 h1 {
-font: 48px "Times New Roman";
+font: 48px "AppleGothic";
 text-align: center
 }
 
 .centerShareStory {
 text-align: center
 
+}
+
+.orderedlist {
+
+ list-style-type: square
+
+}
+
+.smallbodyfont{
+  font:12px "AppleGothic";
 }
