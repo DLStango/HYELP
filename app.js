@@ -12,6 +12,8 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
+
+const mongoose = require( 'mongoose' );
 const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.mlab.com:49857/heroku_nvnz46d3'
 const MongoData = 'mongodb://mongolab-trapezoidal-36815'
 var uristring =
@@ -29,8 +31,8 @@ var uristring =
       }
     });
 
-const mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
+
+//mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
