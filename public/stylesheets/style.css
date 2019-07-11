@@ -34,3 +34,8 @@ text-align: center
 .smallbodyfont{
   font:12px "AppleGothic";
 }
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
