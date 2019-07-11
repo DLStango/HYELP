@@ -12,6 +12,22 @@ bodyParser = require("body-parser"),
 User = require( './models/User' ),
 flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
+const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.mlab.com:49857/heroku_nvnz46d3'
+const MongoData = 'mongodb://mongolab-trapezoidal-36815'
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/mydb';
+
+    // Makes connection asynchronously.  Mongoose will queue up database
+    // operations and release them when the connection is complete.
+    mongoose.connect(uristring, function (err, res) {
+      if (err) {
+      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+      } else {
+      console.log ('Succeeded connected to: ' + uristring);
+      }
+    });
 
 const mongoose = require( 'mongoose' );
 mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
