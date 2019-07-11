@@ -25,3 +25,7 @@ text-align: center
  list-style-type: square
 
 }
+
+.smallbodyfont{
+  font:12px "AppleGothic";
+}
