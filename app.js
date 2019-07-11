@@ -191,7 +191,7 @@ app.get('/Weather', function(req, res, next) {
 });
 
 app.get('/rStanghellini', function(req, res, next) {
-  res.render('rStanghelllini',{title:"Rina Stanghellini"});
+  res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
 
 
