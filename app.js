@@ -194,9 +194,7 @@ app.get('/tNguyen', function(req, res, next) {
   res.render('tNguyen',{title:"Trish Nguyen"});
 });
 
-app.get('/seeStories', function(req, res, next) {
-  res.render('seeStories',{title:"See people's stories"});
-});
+app.get('/seeStories',commentController.getAllComments );
 
 app.get('/Weather', function(req, res, next) {
   res.render('Weather',{title:"Boston Weather"});
@@ -234,7 +232,7 @@ app.get('/myform', function(req, res, next) {
 
 app.post('/processform', commentController.saveComment)
 
-app.get('/showComments', commentController.getAllComments)
+app.get('/comments', commentController.getAllComments)
 // app.use('/', indexRouter);  // this is how we use a router to handle the / path
 // but here we are more direct
 

@@ -6,16 +6,18 @@ exports.saveComment = ( req, res ) => {
   //console.dir(req)
   let newComment = new Comment(
    {
-    url: req.body.url,
+    date: new Date(),
     comment: req.body.comment
    }
   )
+  console.log("saved a comment")
+  console.dir(newComment)
 
   //console.log("skill = "+newSkill)
 
   newComment.save()
     .then( () => {
-      res.redirect( '/showComments' );
+      res.redirect( '/seeStories' );
     } )
     .catch( error => {
       res.send( error );
@@ -31,7 +33,7 @@ exports.getAllComments = ( req, res ) => {
     .exec()
     .then( ( comments ) => {
       res.render( 'comments', {
-        comments:comments, title:"Comments"
+        comments:comments, title:"Stories"
       } );
     } )
     .catch( ( error ) => {
