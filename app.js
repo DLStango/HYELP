@@ -186,6 +186,14 @@ app.get('/sSundayTrombone', function(req, res, next) {
   res.render('sSundayTrombone',{title:"Samantha Sunday Trombone"});
 });
 
+app.get('/eHelms', function(req, res, next) {
+  res.render('eHelms',{title:"Evelyn Helms"});
+});
+
+app.get('/tNguyen', function(req, res, next) {
+  res.render('tNguyen',{title:"Trish Nguyen"});
+});
+
 app.get('/seeStories', function(req, res, next) {
   res.render('seeStories',{title:"See people's stories"});
 });
