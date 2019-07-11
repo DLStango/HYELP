@@ -4,11 +4,16 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #7bb061;
+}
+
+a:hover{
+  color: #5d8549
 }
 
 .bodyfont {
   font: 18px "AppleGothic";
+
 }
 h1 {
 font: 48px "AppleGothic";
