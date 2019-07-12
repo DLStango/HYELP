@@ -3,13 +3,13 @@
     <div class="jumbotron">
         <h1>See others' stories</h1>
     </div>
-    <div class="bodyfont">
+  <div class="bodyfont">
 <table width="100%" border="0">
-  <tr>
+  <tr height="100">
 
-  <td id="bgforheader" class="centerShareStory"> See Others' Stories</td>
-  <td class="centerShareStory"> Ask and Answer Questions</td>
-  <td class="centerShareStory"> Request Features</td>
+  <td id="bgforheader" class="centerShareStory"> <h2>See Others' Stories<h2></td>
+  <td class="centerShareStory"> <h2>Ask and Answer Questions<h2></td>
+  <td id="bgforheader2" class="centerShareStory"> <h2>Request Features<h2></td>
   </tr>
 
   <tr id="bgforstories">
@@ -18,8 +18,8 @@
       <ol>
     <% for(i = 0; i<comments.length; i++){  %>
         <li>
-             <%= comments[i].comment %>
-             <br>
+             <%= comments[i].comment%>
+             <br><br>
              <%= comments[i].date %>
              <br>
              <br>
