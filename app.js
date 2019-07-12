@@ -16,6 +16,7 @@ flash = require('connect-flash')
 const mongoose = require( 'mongoose' );
 const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.mlab.com:49857/heroku_nvnz46d3'
 const MongoData = 'mongodb://mongolab-trapezoidal-36815'
+
 var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
