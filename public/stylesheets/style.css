@@ -40,7 +40,12 @@ text-align: center;
   font:12px "AppleGothic";
 }
 
+<<<<<<< HEAD
+#navbarDropdown{
+  
+=======
 #navbarDropdownZZZ{
+>>>>>>> 28c86b62ccdd9ef71998f69d9c9b2ea14fd61639
   position: relative;
   left: 600px;
 }
@@ -49,6 +54,7 @@ text-align: center;
 .navbar-brandZZZ{
   /*float: right;*/
   /*padding: 0px 100px 10px 200px;*/
+
   position: relative;
   left: 400px;}
 
