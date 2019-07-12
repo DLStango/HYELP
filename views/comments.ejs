@@ -3,14 +3,24 @@
     <div class="jumbotron">
         <h1>See others' stories</h1>
     </div>
+
     <div class="bodyfont">
+
     <ol>
     <% for(i = 0; i<comments.length; i++){  %>
+
         <li>
-              <%= comments[i].date %></a>
-              <i>
-             <%= comments[i].comment %></\/i> </li><br>
-    <% } %>
+             <%= comments[i].comment %>
+             <br>
+             <%= comments[i].date %>
+             <br>
+  
+          <% } %>
+        </li>
+
+
     </ol>
+
   </div>
+
 <%- include('bootfooter') -%>

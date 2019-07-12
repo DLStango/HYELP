@@ -12,8 +12,8 @@ a:hover{
 }
 
 .bodyfont {
-  font: 18px "AppleGothic"
-;
+  font: 18px "AppleGothic";
+  font-style:normal;
 
 }
 h1 {
