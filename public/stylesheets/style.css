@@ -1,22 +1,18 @@
 body {
   padding: 50px;
   font: 16px "Arial", Helvetica, Arial, sans-serif;
-  background-color:#C2C6E8;
 }
 
 a {
-  color: #6c9956;
-  font-weight: 2000;
+  color: #7bb061;
 }
 
 a:hover{
-  color: #557844;
-  font-weight: 2000;
+  color: #5d8549;
 }
 
 .bodyfont {
   font: 18px "AppleGothic";
-  font-style:normal;
 
 }
 h1 {
@@ -26,7 +22,6 @@ text-align: center;
 
 .centerShareStory {
 text-align: center;
-
 
 }
 
@@ -40,18 +35,13 @@ text-align: center;
   font:12px "AppleGothic";
 }
 
-<<<<<<< HEAD
 #navbarDropdown{
-  
-=======
-#navbarDropdownZZZ{
->>>>>>> 28c86b62ccdd9ef71998f69d9c9b2ea14fd61639
   position: relative;
   left: 600px;
 }
 
 
-.navbar-brandZZZ{
+.navbar-brand{
   /*float: right;*/
   /*padding: 0px 100px 10px 200px;*/
 
@@ -59,32 +49,21 @@ text-align: center;
   left: 400px;}
 
   .form-submit-button {
+
 background: #7AB062;
+
 color: white;
+
+
+
 border-color: #7AB062;
+
 height: 50px;
+
 width: 100px;
+
 font: bold 15px AppleGothic, sans-serif;
+
 text-shadow:none;
-}
 
-#bgforstories {
-
-  background-color: #efede9;
-}
-
-#bgforheader{
-
-    background-color: #efede9;
-  
-}
-
-#bgforstories2 {
-
-  background-color: #efeae9;
-}
-
-#bgforheader2{
-
-    background-color: #efeae9;
 }
