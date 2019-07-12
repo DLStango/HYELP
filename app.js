@@ -270,9 +270,9 @@ function processFormData(req,res,next){
      {title:"Form Data",url:req.body.url, coms:req.body.theComments})
 }
 
-function processFormData(req,res,next){
-  res.render('formdata',
-}
+// function processFormData(req,res,next){
+//   res.render('formdata',)
+// }
 
 
 // catch 404 and forward to error handler
