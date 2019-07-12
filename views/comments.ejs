@@ -3,24 +3,31 @@
     <div class="jumbotron">
         <h1>See others' stories</h1>
     </div>
-
     <div class="bodyfont">
+<table width="100%" border="0">
+  <tr>
 
-    <ol>
+  <td id="bgforheader" class="centerShareStory"> See Others' Stories</td>
+  <td class="centerShareStory"> Ask and Answer Questions</td>
+  <td class="centerShareStory"> Request Features</td>
+  </tr>
+
+  <tr id="bgforstories">
+    <td>
+      <br>
+      <ol>
     <% for(i = 0; i<comments.length; i++){  %>
-
         <li>
              <%= comments[i].comment %>
              <br>
              <%= comments[i].date %>
              <br>
-  
+             <br>
           <% } %>
         </li>
-
-
     </ol>
-
+    </td>
+    </tr>
+  </table>
   </div>
-
 <%- include('bootfooter') -%>

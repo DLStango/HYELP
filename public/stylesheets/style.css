@@ -27,6 +27,7 @@ text-align: center;
 .centerShareStory {
 text-align: center;
 
+
 }
 
 .orderedlist {
@@ -52,21 +53,21 @@ text-align: center;
   left: 400px;}
 
   .form-submit-button {
-
 background: #7AB062;
-
 color: white;
-
-
-
 border-color: #7AB062;
-
 height: 50px;
-
 width: 100px;
-
 font: bold 15px AppleGothic, sans-serif;
-
 text-shadow:none;
+}
 
+#bgforstories {
+
+  background-color: #efede9;
+}
+
+#bgforheader{
+
+    background-color: #efede9;
 }
