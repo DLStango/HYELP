@@ -34,3 +34,15 @@ text-align: center;
 .smallbodyfont{
   font:12px "AppleGothic";
 }
+
+#navbarDropdown{
+  position: relative;
+  left: 600px;
+}
+
+
+.navbar-brand{
+  /*float: right;*/
+  /*padding: 0px 100px 10px 200px;*/
+  position: relative;
+  left: 400px;}
