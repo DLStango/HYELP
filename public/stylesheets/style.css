@@ -3,6 +3,9 @@ body {
   font: 16px "Arial", Helvetica, Arial, sans-serif;
   background-color:#f0eda5;
 }
+#menu{
+  background-color: black;
+}
 
 a {
   color: #7bb061;
