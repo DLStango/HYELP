@@ -4,9 +4,14 @@ body {
   background-color:#f0eda5;
 }
 
+#menu{
+    background-color: #f2f2f2;
+}
+
 a {
   color: #7bb061;
 }
+
 
 a:hover{
   color: #5d8549;
@@ -65,13 +70,13 @@ height: 50px;
 
 }
 
-
-#bgforstories2{
-
-
-width: 100px;y
+width: 100px;
 
 font: bold 15px AppleGothic, sans-serif;
 
 text-shadow:none;
+
+}
+table{
+
 }
