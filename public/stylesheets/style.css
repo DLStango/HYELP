@@ -36,6 +36,7 @@ text-align: center;
 }
 
 #navbarDropdown{
+  
   position: relative;
   left: 600px;
 }
@@ -44,6 +45,7 @@ text-align: center;
 .navbar-brand{
   /*float: right;*/
   /*padding: 0px 100px 10px 200px;*/
+
   position: relative;
   left: 400px;}
 
