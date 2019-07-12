@@ -8,7 +8,7 @@ a {
 }
 
 a:hover{
-  color: #5d8549
+  color: #5d8549;
 }
 
 .bodyfont {
@@ -17,17 +17,17 @@ a:hover{
 }
 h1 {
 font: 48px "AppleGothic";
-text-align: center
+text-align: center;
 }
 
 .centerShareStory {
-text-align: center
+text-align: center;
 
 }
 
 .orderedlist {
 
- list-style-type: square
+ list-style-type: square;
 
 }
 
