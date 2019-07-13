@@ -202,6 +202,10 @@ app.get('/shareStory', function(req, res, next) {
   res.render('shareStory',{title:"Share your story"});
 });
 
+app.get('/coupons', function(req, res, next) {
+  res.render('coupons',{title:"Coupons"});
+});
+
 app.get('/sSundayTrombone', function(req, res, next) {
   res.render('sSundayTrombone',{title:"Samantha Sunday Trombone"});
 });
@@ -256,7 +260,9 @@ app.get('/myform', function(req, res, next) {
   res.render('myform',{title:"Form Demo"});
 });
 
+
 app.post('/processform', commentController.saveComment)
+
 
 app.get('/comments', commentController.getAllComments)
 // app.use('/', indexRouter);  // this is how we use a router to handle the / path
@@ -264,11 +270,15 @@ app.get('/comments', commentController.getAllComments)
 
 app.get('/showComment/:id', commentController.getOneComment)
 
+
 function processFormData(req,res,next){
   res.render('formdata',
      {title:"Form Data",url:req.body.url, coms:req.body.theComments})
 }
 
+// function processFormData(req,res,next){
+//   res.render('formdata',)
+// }
 
 
 // catch 404 and forward to error handler

@@ -1,14 +1,33 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
-    <div class="jumbotron">
+<br>
+<br>
         <h1>See others' stories</h1>
-    </div>
-    <ol>
+
+  <div class="bodyfont">
+<table width="100%" border="0">
+  <tr height="100">
+
+  <td id="bgforheader" class="centerShareStory"> <h2>See Others' Stories<h2></td>
+  <td class="centerShareStory"> <h2>Ask and Answer Questions<h2></td>
+  <td id="bgforheader2" class="centerShareStory"> <h2>Request Features<h2></td>
+  </tr>
+
+  <tr id="bgforstories">
+    <td>
+      <br>
+      <ol>
     <% for(i = 0; i<comments.length; i++){  %>
         <li>
-              <%= comments[i].date %></a>
-              <i>
-             <%= comments[i].comment %></\/i> </li>
-    <% } %>
+             <%= comments[i].comment%>
+             <br><br>
+             <%= comments[i].date %>
+             <br>
+             <br>
+          <% } %>
+        </li>
     </ol>
+    </td>
+  </table>
+  </div>
 <%- include('bootfooter') -%>

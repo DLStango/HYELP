@@ -1,20 +1,50 @@
 <%- include('bootheader') -%>
 <%- include('menubar') -%>
-    <div class="jumbotron">
+<br>
+<br>
         <h1>Share your story</h1><br>
         <div class="bodyfont">
         <p class="centerShareStory">Tell us and the community what you've experienced</p>
-        </div>
+
+
+    <table border="1" width="100%">
+    <tr height="100">
+      <td id="bgforheader" class="centerShareStory"width="400"> <h2>See Others' Stories<h2></td>
+  <td class="centerShareStory" width="widthofsharestoryboxes"> <h2>Ask and Answer Questions<h2></td>
+  <td id="bgforheader2" width="widthofsharestoryboxes"class="centerShareStory"> <h2>Request Features<h2></td>
+  </tr>
+  <tr id="bgforstories">
+<td>
+        <form method="post" action="/processform">
+
+
+          <br>
+          <br>
+
+          <textarea name="comment" rows="10" style= "width: 100%; border: none">
+          </textarea>
+          <br><br>
+
+          <input class="form-submit-button" type="submit">
+        </form>
+        </td>
+<td>
+  <form method="post" action="/processform">
+
+
+    <br>
+    <br>
+
+    <textarea name="question" rows="10" style= "width: 100%; border: none">
+    </textarea>
+    <br><br>
+
+    <input class="form-submit-button" type="submit">
+  </form>
+</td>
+        </tr>
+    </table>
     </div>
 
-    <form method="post" action="/processform">
-      Comments:
-      <br>
-      <br>
-      <textarea name="comment" rows="10" cols="80"></textarea>
 
-      <br><br>
-
-      <input type="submit">
-    </form>
 <%- include('bootfooter') -%>
