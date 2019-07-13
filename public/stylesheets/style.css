@@ -49,7 +49,6 @@ text-align: center;
   left: 600px;
 }
 
-
 .navbar-brand{
   /*float: right;*/
   /*padding: 0px 100px 10px 200px;*/
@@ -71,7 +70,7 @@ height: 50px;
 }
 
 #bgforheader {
-  border-color: #7AB062;
+  border-color: Black;
 
   height: 50px;
       background-color: #efede9;
