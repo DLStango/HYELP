@@ -218,6 +218,9 @@ app.get('/Weather', function(req, res, next) {
   res.render('Weather',{title:"Boston Weather"});
 });
 
+app.get('/couponform', function(req, res, next) {
+  res.render('couponform',{title:"Coupon Form"});
+});
 app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
