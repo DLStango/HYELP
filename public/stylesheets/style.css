@@ -63,8 +63,6 @@ background: #7AB062;
 
 color: white;
 
-
-
 border-color: #7AB062;
 
 height: 50px;
@@ -72,13 +70,28 @@ height: 50px;
 
 }
 
-width: 100px;
+#bgforheader {
+  border-color: #7AB062;
 
-font: bold 15px AppleGothic, sans-serif;
+  height: 50px;
+      background-color: #efede9;
 
-text-shadow:none;
 
 }
-table{
 
+#bgforheader2{
+text-shadow:none;
+
+  background-color: #efeae9;
+}
+
+#bgforstories {
+
+  background-color: #efede9;
+}
+
+#bgforstories2 {
+width: 100px;
+
+  background-color: #efeae9;
 }
