@@ -153,6 +153,10 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+const locationController = require('./controllers/locationController')
+app.get('/showLocations',locationController.getAllLocations)
+app.post('/showLocations',locationController.saveLocation)
+
 
 // we require them to be logged in to see their profile
 app.get('/profile', isLoggedIn, function(req, res) {

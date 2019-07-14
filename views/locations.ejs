@@ -1,0 +1,197 @@
+<%- include('bootheader') %>
+<%- include('menubar') %>
+<div class="jumbotron">
+   <h1> Helpful Hints</h1>
+   <p> Here you can look at comments tagged at various locations </p>
+</div>
+
+<!-- Here is where the map will appear -->
+<div id="map_canvas"></div>
+
+<!-- Here is a form for adding another marker on the map -->
+<h1> Add your own helpful hints below:</h1>
+<form method="post" action="showLocations">
+  Add info about the current location:
+  <br>
+  place: <input type="text" name="place"><br>
+  comments<br> <textarea name="comment" rows="5" cols="80"></textarea><br>
+  <input type="text" name="comment1"><br>
+
+  website: <input type="text" name="website"><br>
+  category: <input type="text" name="category"><br>
+  And add the location (we'll autofill this in the future)<br>
+  latitude: <input type="text" id="lat" name="lat"><br>
+  longitude: <input type="text" id="lon" name="lon"><br>
+  <input type="submit">
+</form>
+
+
+
+
+
+
+
+<script>
+    /*
+    The rest of this file consists of a bunch of javascript code
+    which is run on the server and which creates the map
+    and adds the pins to the map, and creates the pages which
+    pop up when someone clicks on a pin!
+    */
+
+  //Create a single global variable
+  let MAPAPP = {};
+  MAPAPP.markers = [];
+  //MAPAPP.currentInfoWindow;
+  MAPAPP.pathName = window.location.pathname;
+  console.log("in locations.ejs")
+
+  console.log("places = ")
+
+  let places2 = [
+  {
+          "shopname": "Dunkin Donuts",
+          "location":{
+              "type": "Point",
+              "coordinates": [42.376356, -71.245370]
+          },
+          "details": "Great coffee, atmosphere, and staff!!",
+          "website": "/"
+      }
+  ]
+  let newPlaces = <%- JSON.stringify(locations) %>
+  console.log(newPlaces)
+  console.log("newPlaces = ")
+  console.dir(newplaces)
+  //let places = newPlaces
+  let thePlaces = [
+  {
+          "placeName": "Dunkin Donuts",
+          "location":{
+              "type": "Point",
+              "coordinates": [42.376356, -71.245370]
+          },
+          "comments": "Great coffee, atmosphere, and staff!!",
+          "category": "bathrooms"
+      }
+  ]
+  console.log("places="+JSON.stringify(places))
+
+  function loadData(){
+      console.log("in loadData")
+      initialize()
+      console.log("initialized!")
+      populateMarkers()
+      console.log("done with loadData")
+  }
+  //Initialize our Google Map
+  function initialize() {
+
+      var center = new google.maps.LatLng(42.3765,-71.2356); // Waltham
+      //var center = new google.maps.LatLng(42.3601,-71.0589); // Boston
+      //var center = new google.maps.LatLng(39.9543926,-75.1627432); //Philly
+      var mapOptions = {
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: center,
+      };
+      this.map = new google.maps.Map(document.getElementById('map_canvas'),
+          mapOptions);
+      MAPAPP.map = this.map
+  };
+
+  // Fill map with markers
+  function populateMarkers(dataType) {
+
+      console.log("in populateMarkers")
+      console.log("places.length=")
+      console.dir(newPlaces)
+      console.log("running forEach")
+      //apiLoc = [] //typeof apiLoc !== 'undefined' ? apiLoc : '/data/' + dataType + '.json';
+      // jQuery AJAX call for JSON
+      //apiLoc = "/js/coffee.json"
+      //$.getJSON(apiLoc, function(data) {
+        //   $.each(data, function(i, ob) {
+      newPlaces.forEach((data)=> {
+          console.log("processing data in populateMarkers")
+          console.dir(data)
+
+              var marker = new google.maps.Marker({
+                  map: map,
+                  website: data.website,
+                  position: new google.maps.LatLng(data.location.coordinates[0], data.location.coordinates[1]),
+                  placeName: data.placeName,
+                  comment: data.comment,
+                  website: data.website,
+                  category: data.category,
+                  icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+              });
+              console.log("created a marker")
+      	//Build the content for InfoWindow
+              //var content = '<h1 class="mt0"><a href="' + marker.website + '" target="_blank" title="' + marker.shopname + '">' + marker.shopname + '</a></h1><p>' + marker.details + '</p>';
+              var content = `
+<h1 class="mt0">
+    <a href="${marker.website}"
+       target="_blank"
+       title="${marker.placeName}">
+      ${marker.placeName}
+     </a>
+     /${marker.category}
+ </h1>
+ <p> ${marker.comment}</p>`;
+ console.log(content)
+
+            marker.infowindow = new google.maps.InfoWindow({
+              	content: content,
+              	maxWidth: 400
+              });
+              console.log("created the infowindow")
+      	//Add InfoWindow
+              google.maps.event.addListener(marker, 'click', function() {
+                  if (MAPAPP.currentInfoWindow) MAPAPP.currentInfoWindow.close();
+                  marker.infowindow.open(map, marker);
+                  MAPAPP.currentInfoWindow = marker.infowindow;
+              });
+              console.log("added a listener")
+              MAPAPP.markers.push(marker);
+              console.log("completed processing this item")
+          });
+      }
+
+</script>
+
+<script>
+    var optionsLatLon = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+      let lat = document.getElementById('lat')
+      let long = document.getElementById('lon')
+      lat.value = crd.latitude
+      lon.value = crd.longitude
+      if (MAPAPP.map){
+          MAPAPP.map.setCenter(new google.maps.LatLng(crd.latitude, crd.longitude));
+      }
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error, optionsLatLon);
+</script>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=loadData"
+type="text/javascript"></script>
+<img src="images/logo.png" width="100%">
+<%- include('bootfooter') %>
