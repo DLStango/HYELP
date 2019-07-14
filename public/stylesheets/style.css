@@ -19,10 +19,16 @@ a:hover{
   color: #5d8549;
 }
 
+.bigfont {
+  font: 56px "AppleGothic";
+
+}
+
 .bodyfont {
   font: 18px "AppleGothic";
 
 }
+
 h1 {
 font: 48px "AppleGothic";
 text-align: center;
@@ -49,7 +55,6 @@ text-align: center;
   left: 600px;
 }
 
-
 .navbar-brand{
   /*float: right;*/
   /*padding: 0px 100px 10px 200px;*/
@@ -71,7 +76,7 @@ height: 50px;
 }
 
 #bgforheader {
-  border-color: #7AB062;
+  border-color: Black;
 
   height: 50px;
       background-color: #efede9;
@@ -94,4 +99,37 @@ text-shadow:none;
 width: 100px;
 
   background-color: #efeae9;
+}
+
+.footerfont{
+  display: inline;
+  font: 18px "AppleGothic";
+padding-left: 10px;
+padding-right: 10px;
+padding: 20px;
+  position: absolute;
+}
+.cvv-input input {
+    width: 145px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+}
+
+.cvv-details {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.cvv-details p {
+    margin-top: 6px;
+}
+
+.credit-card {
+    width: 360px;
+    height: 400px;
+    margin: 60px auto 0;
+    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
 }

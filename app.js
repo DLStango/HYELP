@@ -224,6 +224,9 @@ app.get('/Weather', function(req, res, next) {
   res.render('Weather',{title:"Boston Weather"});
 });
 
+app.get('/couponform', function(req, res, next) {
+  res.render('couponform',{title:"Coupon Form"});
+});
 app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
@@ -245,6 +248,10 @@ app.get('/NearestFacilities', function(req, res, next) {
 
 app.get('/Donates', function(req, res, next) {
   res.render('Donates',{title:"Donates"});
+});
+
+app.get('/thanks', function(req, res, next) {
+  res.render('thanks',{title:"Donates"});
 });
 
 app.get('/VWork', function(req, res, next) {
