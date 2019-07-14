@@ -225,6 +225,10 @@ app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
 
+app.get('/thanks', function(req, res, next) {
+  res.render('thanks',{title:"Thanks"});
+});
+
 app.get('/cLai', function(req, res, next) {
   res.render('cLai',{title:"Crystal Lai"});
 });
