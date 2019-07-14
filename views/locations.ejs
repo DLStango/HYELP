@@ -14,9 +14,9 @@
 </form>
 <div id="map_canvas"></div>
 
-<pre>
-    <%= JSON.stringify(locations,0) %>
-</pre>
+<div>
+    <%= locations[0] %>
+</div>
 
 <script>
 
@@ -28,8 +28,7 @@
   console.log("in locations.ejs")
 
   console.log("places = ")
-  newPlaces = []
-  console.dir(newPlaces)
+
   let places2 = [
   {
           "shopname": "Dunkin Donuts",
@@ -41,10 +40,12 @@
           "website": "/"
       }
   ]
-  let newplaces = []
-  console.log("newplaces = ")
+  let newPlaces = <%- JSON.stringify(locations) %>
+  console.log(newPlaces)
+  console.log("newPlaces = ")
   console.dir(newplaces)
-  let places = [
+  //let places = newPlaces
+  let thePlaces = [
   {
           "placeName": "Dunkin Donuts",
           "location":{
@@ -55,10 +56,12 @@
           "category": "bathrooms"
       }
   ]
+  console.log("places="+JSON.stringify(places))
 
   function loadData(){
       console.log("in loadData")
       initialize()
+      console.log("initialized!")
       populateMarkers()
       console.log("done with loadData")
   }
@@ -79,12 +82,17 @@
 
   // Fill map with markers
   function populateMarkers(dataType) {
+
+      console.log("in populateMarkers")
+      console.log("places.length=")
+      console.dir(newPlaces)
+      console.log("running forEach")
       //apiLoc = [] //typeof apiLoc !== 'undefined' ? apiLoc : '/data/' + dataType + '.json';
       // jQuery AJAX call for JSON
       //apiLoc = "/js/coffee.json"
       //$.getJSON(apiLoc, function(data) {
         //   $.each(data, function(i, ob) {
-      places.forEach((data)=> {
+      newPlaces.forEach((data)=> {
           console.log("processing data in populateMarkers")
           console.dir(data)
 
@@ -133,5 +141,5 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=loadData"
 type="text/javascript"></script>
-
+<img src="images/logo.png" width="100%">
 <%- include('bootfooter') %>
