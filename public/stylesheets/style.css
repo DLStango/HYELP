@@ -103,3 +103,27 @@ padding-right: 10px;
 padding: 20px;
   position: absolute;
 }
+.cvv-input input {
+    width: 145px;
+    padding-left: 20px;
+    border: 2px solid #e1e8ee;
+    border-radius: 6px;
+}
+
+.cvv-details {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.cvv-details p {
+    margin-top: 6px;
+}
+
+.credit-card {
+    width: 360px;
+    height: 400px;
+    margin: 60px auto 0;
+    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+}
