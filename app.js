@@ -244,6 +244,10 @@ app.get('/Donates', function(req, res, next) {
   res.render('Donates',{title:"Donates"});
 });
 
+app.get('/thanks', function(req, res, next) {
+  res.render('thanks',{title:"Donates"});
+});
+
 app.get('/VWork', function(req, res, next) {
   res.render('VWork',{title:"HYELP VWork"});
 });
