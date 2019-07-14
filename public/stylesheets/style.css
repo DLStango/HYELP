@@ -5,12 +5,10 @@ body {
 }
 
 #map_canvas{
-	height: 100%;
-	margin:0;
-	padding:0;
-	border:thick solid red;
-	font-family: helvetica, 'helvetica neue', arial, sans-serif;
+	border:thin solid blue;
+	height:400px;
 }
+
 
 #menu{
     background-color: #f2f2f2;
