@@ -1,6 +1,6 @@
 'use strict';
 const Location = require( '../models/Location' );
-const Comment = require( '../models/Comment' );
+
 
 exports.saveLocation = ( req, res ) => {
   //console.log("in saveSkill!")
@@ -12,6 +12,7 @@ exports.saveLocation = ( req, res ) => {
      placeName: req.body.place,
      useremail: "anon",//user.googleemail,
      category: req.body.category,
+     website: req.body.website,
      location: {
        type: 'Point',
        coordinates: [req.body.lat,req.body.lon] //convert to numbers?
@@ -43,27 +44,6 @@ exports.getAllLocations = ( req, res ) => {
       console.log("locations: "+data.length)
       res.render( 'locations', {
         locations:data, title:"Locations"
-      } );
-    } )
-    .catch( ( error ) => {
-      console.log( error.message );
-      return [];
-    } )
-    .then( () => {
-      //console.log( 'skill promise complete' );
-    } );
-};
-
-// this displays all of the skills
-exports.getOneComment = ( req, res ) => {
-  //gconsle.log('in getAllSkills')
-  const id = req.params.id
-  console.log('the id is '+id)
-  Comment.findOne({_id:id})
-    .exec()
-    .then( ( comment ) => {
-      res.render( 'comment', {
-        comment:comment, title:"Comment"
       } );
     } )
     .catch( ( error ) => {

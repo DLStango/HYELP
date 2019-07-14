@@ -20,6 +20,7 @@ var locationSchema = Schema( {
   placeName: String,
   useremail: String,
   category: String,
+  website: String,
   location: {
     type: pointSchema,
     required: true

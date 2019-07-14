@@ -1,24 +1,43 @@
 <%- include('bootheader') %>
 <%- include('menubar') %>
+<div class="jumbotron">
+   <h1> Helpful Hints</h1>
+   <p> Here you can look at comments tagged at various locations </p>
+</div>
 
-<h1>Locations!!</h1>
+<!-- Here is where the map will appear -->
+<div id="map_canvas"></div>
+
+<!-- Here is a form for adding another marker on the map -->
+<h1> Add your own helpful hints below:</h1>
 <form method="post" action="showLocations">
   Add info about the current location:
   <br>
-  comment: <input type="text" name="comment"><br>
-  placeName: <input type="text" name="place"><br>
+  place: <input type="text" name="place"><br>
+  comments<br> <textarea name="comment" rows="5" cols="80"></textarea><br>
+  <input type="text" name="comment1"><br>
+
+  website: <input type="text" name="website"><br>
   category: <input type="text" name="category"><br>
-  latitude: <input type="text" name="lat"><br>
-  longitude: <input type="text" name="lon"><br>
+  And add the location (we'll autofill this in the future)<br>
+  latitude: <input type="text" id="lat" name="lat"><br>
+  longitude: <input type="text" id="lon" name="lon"><br>
   <input type="submit">
 </form>
-<div id="map_canvas"></div>
 
-<div>
-    <%= locations[0] %>
-</div>
+
+
+
+
+
 
 <script>
+    /*
+    The rest of this file consists of a bunch of javascript code
+    which is run on the server and which creates the map
+    and adds the pins to the map, and creates the pages which
+    pop up when someone clicks on a pin!
+    */
 
   //Create a single global variable
   let MAPAPP = {};
@@ -78,6 +97,7 @@
       };
       this.map = new google.maps.Map(document.getElementById('map_canvas'),
           mapOptions);
+      MAPAPP.map = this.map
   };
 
   // Fill map with markers
@@ -98,10 +118,11 @@
 
               var marker = new google.maps.Marker({
                   map: map,
+                  website: data.website,
                   position: new google.maps.LatLng(data.location.coordinates[0], data.location.coordinates[1]),
                   placeName: data.placeName,
                   comment: data.comment,
-                  website: "/",
+                  website: data.website,
                   category: data.category,
                   icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
               });
@@ -138,6 +159,37 @@
       }
 
 </script>
+
+<script>
+    var optionsLatLon = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+      let lat = document.getElementById('lat')
+      let long = document.getElementById('lon')
+      lat.value = crd.latitude
+      lon.value = crd.longitude
+      if (MAPAPP.map){
+          MAPAPP.map.setCenter(new google.maps.LatLng(crd.latitude, crd.longitude));
+      }
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error, optionsLatLon);
+</script>
+
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=loadData"
 type="text/javascript"></script>

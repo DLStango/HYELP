@@ -18,7 +18,7 @@ const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.
 const MongoData = 'mongodb://mongolab-trapezoidal-36815'
 
 var uristring =
-    //MongoURI ||
+    MongoURI ||
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
