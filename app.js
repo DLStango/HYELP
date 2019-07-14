@@ -18,7 +18,7 @@ const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.
 const MongoData = 'mongodb://mongolab-trapezoidal-36815'
 
 var uristring =
-    MongoURI ||
+    //MongoURI ||
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
@@ -153,6 +153,10 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+const locationController = require('./controllers/locationController')
+app.get('/showLocations',locationController.getAllLocations)
+app.post('/showLocations',locationController.saveLocation)
+
 
 // we require them to be logged in to see their profile
 app.get('/profile', isLoggedIn, function(req, res) {

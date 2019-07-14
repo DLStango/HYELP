@@ -1,0 +1,137 @@
+<%- include('bootheader') %>
+<%- include('menubar') %>
+
+<h1>Locations!!</h1>
+<form method="post" action="showLocations">
+  Add info about the current location:
+  <br>
+  comment: <input type="text" name="comment"><br>
+  placeName: <input type="text" name="place"><br>
+  category: <input type="text" name="category"><br>
+  latitude: <input type="text" name="lat"><br>
+  longitude: <input type="text" name="lon"><br>
+  <input type="submit">
+</form>
+<div id="map_canvas"></div>
+
+<pre>
+    <%= JSON.stringify(locations,0) %>
+</pre>
+
+<script>
+
+  //Create a single global variable
+  let MAPAPP = {};
+  MAPAPP.markers = [];
+  //MAPAPP.currentInfoWindow;
+  MAPAPP.pathName = window.location.pathname;
+  console.log("in locations.ejs")
+
+  console.log("places = ")
+  newPlaces = []
+  console.dir(newPlaces)
+  let places2 = [
+  {
+          "shopname": "Dunkin Donuts",
+          "location":{
+              "type": "Point",
+              "coordinates": [42.376356, -71.245370]
+          },
+          "details": "Great coffee, atmosphere, and staff!!",
+          "website": "/"
+      }
+  ]
+  let newplaces = []
+  console.log("newplaces = ")
+  console.dir(newplaces)
+  let places = [
+  {
+          "placeName": "Dunkin Donuts",
+          "location":{
+              "type": "Point",
+              "coordinates": [42.376356, -71.245370]
+          },
+          "comments": "Great coffee, atmosphere, and staff!!",
+          "category": "bathrooms"
+      }
+  ]
+
+  function loadData(){
+      console.log("in loadData")
+      initialize()
+      populateMarkers()
+      console.log("done with loadData")
+  }
+  //Initialize our Google Map
+  function initialize() {
+
+      var center = new google.maps.LatLng(42.3765,-71.2356); // Waltham
+      //var center = new google.maps.LatLng(42.3601,-71.0589); // Boston
+      //var center = new google.maps.LatLng(39.9543926,-75.1627432); //Philly
+      var mapOptions = {
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: center,
+      };
+      this.map = new google.maps.Map(document.getElementById('map_canvas'),
+          mapOptions);
+  };
+
+  // Fill map with markers
+  function populateMarkers(dataType) {
+      //apiLoc = [] //typeof apiLoc !== 'undefined' ? apiLoc : '/data/' + dataType + '.json';
+      // jQuery AJAX call for JSON
+      //apiLoc = "/js/coffee.json"
+      //$.getJSON(apiLoc, function(data) {
+        //   $.each(data, function(i, ob) {
+      places.forEach((data)=> {
+          console.log("processing data in populateMarkers")
+          console.dir(data)
+
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: new google.maps.LatLng(data.location.coordinates[0], data.location.coordinates[1]),
+                  placeName: data.placeName,
+                  comment: data.comment,
+                  website: "/",
+                  category: data.category,
+                  icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+              });
+              console.log("created a marker")
+      	//Build the content for InfoWindow
+              //var content = '<h1 class="mt0"><a href="' + marker.website + '" target="_blank" title="' + marker.shopname + '">' + marker.shopname + '</a></h1><p>' + marker.details + '</p>';
+              var content = `
+<h1 class="mt0">
+    <a href="${marker.website}"
+       target="_blank"
+       title="${marker.placeName}">
+      ${marker.placeName}
+     </a>
+     /${marker.category}
+ </h1>
+ <p> ${marker.comment}</p>`;
+ console.log(content)
+
+            marker.infowindow = new google.maps.InfoWindow({
+              	content: content,
+              	maxWidth: 400
+              });
+              console.log("created the infowindow")
+      	//Add InfoWindow
+              google.maps.event.addListener(marker, 'click', function() {
+                  if (MAPAPP.currentInfoWindow) MAPAPP.currentInfoWindow.close();
+                  marker.infowindow.open(map, marker);
+                  MAPAPP.currentInfoWindow = marker.infowindow;
+              });
+              console.log("added a listener")
+              MAPAPP.markers.push(marker);
+              console.log("completed processing this item")
+          });
+      }
+
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=loadData"
+type="text/javascript"></script>
+
+<%- include('bootfooter') %>

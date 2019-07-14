@@ -4,6 +4,13 @@ body {
   background-color:#f0eda5;
 }
 
+#map_canvas{
+	height: 100%;
+	margin:0;
+	padding:0;
+	border:thick solid red;
+	font-family: helvetica, 'helvetica neue', arial, sans-serif;
+}
 
 #menu{
     background-color: #f2f2f2;
