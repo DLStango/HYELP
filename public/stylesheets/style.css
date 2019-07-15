@@ -4,6 +4,11 @@ body {
   background-color:#f0eda5;
 }
 
+#map_canvas{
+	border:thin solid blue;
+	height:400px;
+}
+
 
 #menu{
     background-color: #f2f2f2;

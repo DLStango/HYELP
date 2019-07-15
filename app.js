@@ -14,7 +14,11 @@ flash = require('connect-flash')
 // END OF AUTHENTICATION MODULES
 
 const mongoose = require( 'mongoose' );
+const MongoURI = 'mongodb://heroku_nvnz46d3:ku494qfi4kcrps55uj8p8sl1c9@ds349857.mlab.com:49857/heroku_nvnz46d3'
+const MongoData = 'mongodb://mongolab-trapezoidal-36815'
+
 var uristring =
+    MongoURI ||
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     'mongodb://localhost/mydb';
@@ -28,6 +32,8 @@ var uristring =
       console.log ('Succeeded connected to: ' + uristring);
       }
     });
+
+
 //mongoose.connect( 'mongodb://localhost/mydb', { useNewUrlParser: true } );
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -147,6 +153,10 @@ function isLoggedIn(req, res, next) {
       res.redirect('/login');
     }
 }
+const locationController = require('./controllers/locationController')
+app.get('/showLocations',locationController.getAllLocations)
+app.post('/showLocations',locationController.saveLocation)
+
 
 // we require them to be logged in to see their profile
 app.get('/profile', isLoggedIn, function(req, res) {
