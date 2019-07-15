@@ -240,6 +240,11 @@ app.get('/NearestFacilities', function(req, res, next) {
   res.render('NearestFacilities',{title:"NearestFacilities"});
 });
 
+app.get('/about', function(req, res, next) {
+  res.render('about',{title:"About"});
+});
+
+
 app.get('/Donates', function(req, res, next) {
   res.render('Donates',{title:"Donates"});
 });
