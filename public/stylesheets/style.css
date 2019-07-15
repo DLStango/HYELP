@@ -39,6 +39,10 @@ font: 48px "AppleGothic";
 text-align: center;
 }
 
+.headingfont{
+
+
+}
 .centerShareStory {
 text-align: center;
 
@@ -76,7 +80,6 @@ color: white;
 border-color: #7AB062;
 
 height: 50px;
-    background-color: #efede9;
 
 }
 
@@ -137,4 +140,10 @@ padding: 20px;
     height: 400px;
     margin: 60px auto 0;
     box-shadow: 1px 2px 3px 0 rgba(0,0,0,.10);
+}
+
+.floatright
+{
+float: right;
+
 }

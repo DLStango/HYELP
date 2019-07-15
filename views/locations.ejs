@@ -1,30 +1,32 @@
 <%- include('bootheader') %>
 <%- include('menubar') %>
-<div class="jumbotron">
+<br>
+<br>
    <h1> Helpful Hints</h1>
-   <p> Here you can look at comments tagged at various locations </p>
-</div>
+   <div class="bodyfont">
+   <p>Look at recommendations from other people</p>
+   </div>
 
 <!-- Here is where the map will appear -->
 <div id="map_canvas"></div>
 
 <!-- Here is a form for adding another marker on the map -->
-<h1> Add your own helpful hints below:</h1>
+<br><br>
+<h1>Add your own helpful hints below:</h1>
+<div class="bodyfont">
 <form method="post" action="showLocations">
   Add info about the current location:
-  <br>
-  place: <input type="text" name="place"><br>
-  comments<br> <textarea name="comment" rows="5" cols="80"></textarea><br>
-  <input type="text" name="comment1"><br>
-
-  website: <input type="text" name="website"><br>
-  category: <input type="text" name="category"><br>
-  And add the location (we'll autofill this in the future)<br>
-  latitude: <input type="text" id="lat" name="lat"><br>
-  longitude: <input type="text" id="lon" name="lon"><br>
-  <input type="submit">
+  <br><br>
+  Place: <input type="text" name="place"><br><br>
+  Comments:<br> <textarea name="comment" rows="5" cols="80"></textarea><br><br>
+  Website: <input type="text" name="website"><br><br>
+  Category: <input type="text" name="category"><br><br>
+  And add the location<br><br>
+  Latitude: <input type="text" id="lat" name="lat"><br><br>
+  Longitude: <input type="text" id="lon" name="lon"><br><br>
+  <input type="submit" class="btn-success">
 </form>
-
+</div>
 
 
 
@@ -194,5 +196,4 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=loadData"
 type="text/javascript"></script>
-<img src="images/logo.png" width="100%">
 <%- include('bootfooter') %>
