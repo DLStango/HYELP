@@ -240,6 +240,11 @@ app.get('/Weather', function(req, res, next) {
 app.get('/couponform', function(req, res, next) {
   res.render('couponform',{title:"Coupon Form"});
 });
+
+app.get('/report', function(req, res, next) {
+  res.render('report',{title:"Report"});
+});
+
 app.get('/rStanghellini', function(req, res, next) {
   res.render('rStanghellini',{title:"Rina Stanghellini"});
 });
