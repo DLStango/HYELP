@@ -129,8 +129,8 @@ app.get('/logout', function(req, res) {
       require('./models/ForumComment').deleteMany({}).exec()
       require('./models/ForumPost').deleteMany({}).exec()
       res.redirect('/')
-    })
-*/
+    })*/
+
 // =====================================
 // GOOGLE ROUTES =======================
 // =====================================
