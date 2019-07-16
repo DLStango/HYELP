@@ -132,14 +132,14 @@
       	//Build the content for InfoWindow
               //var content = '<h1 class="mt0"><a href="' + marker.website + '" target="_blank" title="' + marker.shopname + '">' + marker.shopname + '</a></h1><p>' + marker.details + '</p>';
               var content = `
-<h1 class="mt0">
+<h3 class="mt0">
     <a href="${marker.website}"
        target="_blank"
        title="${marker.placeName}">
       ${marker.placeName}
      </a>
      /${marker.category}
- </h1>
+ </h3>
  <p> ${marker.comment}</p>`;
  console.log(content)
 
