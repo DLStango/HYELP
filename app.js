@@ -122,6 +122,15 @@ app.get('/logout', function(req, res) {
     });
 
 
+/*Reset Feauture
+    app.get('/resetDB',(req,res)=>{
+      // this deletes all of the documents in all collections
+      require('./models/Comment').deleteMany({}).exec()
+      require('./models/ForumComment').deleteMany({}).exec()
+      require('./models/ForumPost').deleteMany({}).exec()
+      res.redirect('/')
+    })
+*/
 // =====================================
 // GOOGLE ROUTES =======================
 // =====================================
